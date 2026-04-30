@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-buttons slot="start">
-      <ion-button routerLink="/"> Menu </ion-button>
+      <ion-button routerLink="/">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+      </ion-button>
     </ion-buttons>
-    <ion-title>{{ title }}</ion-title>
+    <ion-title>{{ title.toLocaleUpperCase() }}</ion-title>
     <ion-buttons slot="end">
       <ion-button routerLink="/settings"> Réglages </ion-button>
     </ion-buttons>

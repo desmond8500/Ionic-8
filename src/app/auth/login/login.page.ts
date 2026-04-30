@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonContent,IonList, IonLabel, IonItem, IonInput, IonToggle, IonNote, IonTabButton, IonButton } from '@ionic/angular/standalone';
+import { IonContent,IonList, IonLabel, IonInputPasswordToggle, IonItem, IonInput, IonToggle, IonNote, IonTabButton, IonButton } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/shared/header/header.component';
 import { RouterLink } from '@angular/router';
 
@@ -10,9 +10,17 @@ import { RouterLink } from '@angular/router';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonButton, IonTabButton, IonNote, IonToggle, IonInput, HeaderComponent, IonContent, CommonModule,
+  imports: [
+    IonButton,
+    IonInput,
+    IonInputPasswordToggle,
+    HeaderComponent,
+    IonContent,
+    CommonModule,
     FormsModule,
-    IonLabel, IonItem, ReactiveFormsModule, IonList, RouterLink
+    IonItem,
+    ReactiveFormsModule,
+    RouterLink,
   ],
 })
 export class LoginPage implements OnInit {
@@ -25,4 +33,9 @@ export class LoginPage implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  login() {
+    console.log('Email:', this.form.value.email);
+    console.log('Password:', this.form.value.password);
+  }
 }

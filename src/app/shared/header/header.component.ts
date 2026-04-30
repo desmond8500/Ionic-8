@@ -6,6 +6,7 @@ import {
   IonTitle,
   IonButton,
   IonButtons,
+  IonMenuButton,
 
  } from '@ionic/angular/standalone';
 @Component({
@@ -18,6 +19,7 @@ import {
     IonButtons,
     IonTitle,
     RouterLink,
+    IonMenuButton,
     IonHeader
   ]
 })

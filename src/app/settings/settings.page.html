@@ -6,7 +6,7 @@
     <h2>Paramètres de l'application</h2>
     <p>Gérez vos préférences et paramètres ici.</p>
 
-    <ion-item routerLink="/settings/profile">
+    <ion-item >
       <ion-label>
         <h3>Server</h3>
         <p>{{ form.value.server ?? 'Pas de serveur' }}</p>
@@ -21,14 +21,6 @@
         <ion-button size="small" (click)="toggle_server_form()">Edit</ion-button>
       }
 
-    </ion-item>
-
-    <ion-item routerLink="/settings/notifications">
-      <ion-label>Notifications</ion-label>
-    </ion-item>
-
-    <ion-item routerLink="/settings/privacy">
-      <ion-label>Confidentialité</ion-label>
     </ion-item>
 
 
