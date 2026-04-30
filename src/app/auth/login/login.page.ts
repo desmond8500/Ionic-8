@@ -4,6 +4,10 @@ import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angu
 import { IonContent,IonList, IonLabel, IonInputPasswordToggle, IonItem, IonInput, IonToggle, IonNote, IonTabButton, IonButton } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/shared/header/header.component';
 import { RouterLink } from '@angular/router';
+import { IonIcon } from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { personOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +17,6 @@ import { RouterLink } from '@angular/router';
   imports: [
     IonButton,
     IonInput,
-    IonInputPasswordToggle,
     HeaderComponent,
     IonContent,
     CommonModule,
@@ -21,6 +24,7 @@ import { RouterLink } from '@angular/router';
     IonItem,
     ReactiveFormsModule,
     RouterLink,
+    IonIcon,
   ],
 })
 export class LoginPage implements OnInit {
@@ -30,7 +34,9 @@ export class LoginPage implements OnInit {
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
 
-  constructor() {}
+  constructor() {
+    addIcons({ personOutline });
+  }
 
   ngOnInit() {}
 
