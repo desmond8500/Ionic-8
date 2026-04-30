@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonContent,IonList, IonLabel, IonInputPasswordToggle, IonItem, IonInput, IonToggle, IonNote, IonTabButton, IonButton } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/shared/header/header.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { IonIcon } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
@@ -29,6 +29,7 @@ import { personOutline } from 'ionicons/icons';
 })
 export class LoginPage implements OnInit {
   fb = inject(FormBuilder);
+  route = inject(Router);
   form = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
@@ -43,5 +44,6 @@ export class LoginPage implements OnInit {
   login() {
     console.log('Email:', this.form.value.email);
     console.log('Password:', this.form.value.password);
+    this.route.navigate(['/home']);
   }
 }
