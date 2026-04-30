@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { IonIcon } from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { settingsOutline } from 'ionicons/icons';
+
 import {
   IonHeader,
   IonToolbar,
@@ -7,6 +12,7 @@ import {
   IonButton,
   IonButtons,
   IonMenuButton,
+
 
  } from '@ionic/angular/standalone';
 @Component({
@@ -20,14 +26,16 @@ import {
     IonTitle,
     RouterLink,
     IonMenuButton,
-    IonHeader
-  ]
+    IonHeader,
+    IonIcon,
+  ],
 })
-export class HeaderComponent  implements OnInit {
+export class HeaderComponent implements OnInit {
   @Input() title: string = '';
 
-  constructor() { }
+  constructor() {
+    addIcons({ settingsOutline });
+  }
 
   ngOnInit() {}
-
 }
